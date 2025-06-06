@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Od</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000 url('background.png') no-repeat center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .button {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      bottom: 15%;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio id="clickSound" src="click.mp3" preload="auto"></audio>
+
+  <button class="button" onclick="reveal()"></button>
+
+  <script>
+    const reveals = [
+      "https://youtu.be/dQw4w9WgXcQ", 
+      "https://yourdomain.com/song1.mp3", 
+      "https://yourdomain.com/exclusive"
+    ];
+    function reveal() {
+      document.getElementById("clickSound").play();
+      const pick = reveals[Math.floor(Math.random() * reveals.length)];
+      window.open(pick, "_blank");
+    }
+  </script>
+</body>
+</html>
